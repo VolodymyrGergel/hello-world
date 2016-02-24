@@ -13,6 +13,7 @@ public class ArrayDemo {
             System.out.println("Element at index 2: " + anArray[2]);
             System.out.println("Element at index 3: " + anArray[3]);
             System.out.println("Element at index 4: " + anArray[4]);
+            System.out.println(anArray.length);
         }
     }
 
