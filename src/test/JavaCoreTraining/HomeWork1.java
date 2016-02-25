@@ -12,7 +12,7 @@ public class HomeWork1 {
         if (a == 0) {
             a = 0.00000000000000000000001;
         }
-        b = 2;
+        b = 1;
         c = 0;
         d = Math.pow(b, 2) - 4 * a * c;
         System.out.println("D: " + d);
