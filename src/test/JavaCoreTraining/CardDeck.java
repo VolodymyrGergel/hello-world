@@ -9,7 +9,7 @@ public class CardDeck {
         String[] rank = {"6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace"};
         String[] suit = {"Spades", "Clubs", "Diamonds", "Hearts"};
         String[] card = new String[suit.length * rank.length];
-        String[] virtualArray = new String[card.length];
+        String buffer = new String();
         String[] hand = new String[card.length];
         int numberOfCards = 0;
         int cardsInHand = 0;
@@ -28,19 +28,21 @@ public class CardDeck {
 
         // mixing
 
-        System.out.println("MIXED CARD DECK:");
         Random rand = new Random();
         for (int i = 0; i < suit.length * rank.length; i++) {
-            int index = rand.nextInt(suit.length * rank.length);
-            virtualArray[i] = card[i];
-            card[i] = card[index];
-            card[index] = virtualArray[i];
+            int randIndex = rand.nextInt(suit.length * rank.length);
+            buffer = card[randIndex];
+            card[randIndex] = card[i];
+            card[i] = buffer;
+        }
+
+        System.out.println("MIXED CARD DECK:");
+        for (int i = 0; i < suit.length * rank.length; i++) {
             System.out.print(card[i] + "   ");
             float a = (i + 1) % 9;
             if (a == 0) {
-            System.out.println();
+                System.out.println();
             }
-
         }
 
         System.out.println();
