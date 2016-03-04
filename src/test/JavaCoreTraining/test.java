@@ -1,13 +1,32 @@
 import java.util.Random;
+import java.util.StringTokenizer;
 
 /**
  * Created by Volodymyr.Gergel on 3/3/2016.
  */
+
+
+// public static int parseInt(String s, int radix)
+
+import java.util.*;
+
 public class test {
     public static void main(String[] args) {
-        for (int i = 1; i < 10; i++) {
-        Random rand = new Random ();
-            int a = rand.nextInt(36);
-        System.out.println(a);}
-    }
+        String a = "hellowoooorld";
+        int d = 1;
+        //char[] b = a.toCharArray();
+        for (int i = 0; i < 10; i++) {
+            char b = a.charAt(i);
+            char c = a.charAt(i+1);
+            if (b == c) {
+                d++;
+            }
+        }
+      //  StringTokenizer b = new StringTokenizer(a);
+        System.out.println(b);
+
+
+            }
+
+
 }
