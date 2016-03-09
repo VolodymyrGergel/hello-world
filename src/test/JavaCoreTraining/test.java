@@ -12,21 +12,37 @@ import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        String a = "hellowoooorld";
+        String[] a = {"h", "e", "l", "l", "o", "w", "o", "o", "o", "o", "r", "l", "d"};
         int d = 1;
-        //char[] b = a.toCharArray();
-        for (int i = 0; i < 10; i++) {
-            char b = a.charAt(i);
-            char c = a.charAt(i+1);
-            if (b == c) {
+        for (int i = 0; i < a.length - 1; i++) {
+            while (a[i] == a[i+1]) {
                 d++;
+                a[i+1] = String.valueOf(d);
             }
+            System.out.print(a[i]);
+            }
+
+
+
+//        char[] e = a.toCharArray();
+            //       int d = 1;
+//        for (int i = 1; i < e.length; i++) {
+
+            //               d++;
+            // e[i] = (char) d;
+//                return a.substring(0,i) + d + a.substring(i+1);
+//            }
+
+            //           System.out.println(e);
         }
-      //  StringTokenizer b = new StringTokenizer(a);
-        System.out.println(b);
+
+    }
 
 
-            }
+//    indexOf(int ch) - поиск первого вхождения символа в строке;
 
+   // public static String replaceCharAt(String s, int pos, char c) {
 
-}
+    //    return s.substring(0,pos) + c + s.substring(pos+1);
+
+  //  }
