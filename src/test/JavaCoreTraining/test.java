@@ -8,21 +8,21 @@ public class test {
         int index = 1;
 
         char[] ch1 = st1.toCharArray();
-        for (int i = 0; i < ch1.length-1; i++) {
-            st4.append(ch1[i]);
-            if (ch1[i] == (ch1[i+1])) {
-                while (ch1[i] == (ch1[i + 1])) {
+        for (int i = 1; i < ch1.length; i++) {
+            st4.append(ch1[i-1]);
+            if (ch1[i-1] == (ch1[i])) {
+                while (ch1[i-1] == (ch1[i])) {
                     i++;
                     index++;
                 }
                 st4.append(index);
                 index = 1;
             }
-                if (i == ch1.length - 2) {
-                st4.append(ch1[i + 1]);
- }
+
+
 
         }
+
         System.out.println(st4);
 
         String st6 = st4.toString();
