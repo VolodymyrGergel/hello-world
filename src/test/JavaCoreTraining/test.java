@@ -1,48 +1,44 @@
-import java.util.Random;
-import java.util.StringTokenizer;
-
-/**
- * Created by Volodymyr.Gergel on 3/3/2016.
- */
-
-
-// public static int parseInt(String s, int radix)
-
-import java.util.*;
 
 public class test {
     public static void main(String[] args) {
-        String[] a = {"h", "e", "l", "l", "o", "w", "o", "o", "o", "o", "r", "l", "d"};
-        int d = 1;
-        for (int i = 0; i < a.length - 1; i++) {
-            while (a[i] == a[i+1]) {
-                d++;
-                a[i+1] = String.valueOf(d);
+        String st1 = "Hellowoooorld";
+        String[] st2 = {"H", "e", "l", "l", "o", "w", "o", "o", "o", "o", "r", "l", "d"};
+        StringBuffer st4 = new StringBuffer();
+        StringBuffer st5 = new StringBuffer();
+        int index = 1;
+        for (int i = 0; i < st2.length-1; i++) {
+            st4.append(st2[i]);
+            if (st2[i].equals(st2[i+1])) {
+                while (st2[i].equals(st2[i + 1])) {
+                    i++;
+                    index++;
+                }
+                st4.append(index);
+                index = 1;
             }
-            System.out.print(a[i]);
-            }
+                if (i == st2.length - 2) {
+                st4.append(st2[i + 1]);
+ }
 
+        }
+        System.out.println(st4);
 
-
-//        char[] e = a.toCharArray();
-            //       int d = 1;
-//        for (int i = 1; i < e.length; i++) {
-
-            //               d++;
-            // e[i] = (char) d;
-//                return a.substring(0,i) + d + a.substring(i+1);
-//            }
-
-            //           System.out.println(e);
+        String st6 = st4.toString();
+        char[] ch1 = st6.toCharArray();
+            for (int i = 0; i < ch1.length; i++) {
+        if (ch1[i] == '2') {
+        st5.append(ch1[i-1]);
+        }
+        else if (ch1[i] == '4') {
+        st5.append(ch1[i-1]).append(ch1[i-1]).append(ch1[i-1]);
         }
 
-    }
+        else {
+        st5.append(ch1[i]);
+        }
 
+        }
+        System.out.println(st5);
+        }
 
-//    indexOf(int ch) - поиск первого вхождения символа в строке;
-
-   // public static String replaceCharAt(String s, int pos, char c) {
-
-    //    return s.substring(0,pos) + c + s.substring(pos+1);
-
-  //  }
+}

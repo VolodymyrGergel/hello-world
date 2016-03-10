@@ -29,9 +29,9 @@ public class Hellowoooorld {
 
 System.out.println();
 
-for (int i=0; i<st3.length; i++){
-System.out.print(st3[i]);
-}
+//for (int i=0; i<st3.length; i++){
+//System.out.print(st3[i]);
+//}
 
 
         System.out.println();
@@ -49,9 +49,9 @@ System.out.print(st3[i]);
                 st4.append(st3[i]);
             }
 
-            System.out.println(st4);
-        }
 
+        }
+        System.out.println(st4);
     }
 
 }
