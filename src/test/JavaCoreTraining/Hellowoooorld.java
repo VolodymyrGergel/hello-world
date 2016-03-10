@@ -1,5 +1,5 @@
 
-public class test {
+public class Hellowoooorld {
     public static void main(String[] args) {
 
         String st1 = "Hellowoooorld";
@@ -18,29 +18,29 @@ public class test {
                 st4.append(index);
                 index = 1;
             }
-                if (i == ch1.length - 2) {
+            if (i == ch1.length - 2) {
                 st4.append(ch1[i + 1]);
- }
+            }
 
         }
         System.out.println(st4);
 
         String st6 = st4.toString();
         char[] ch2 = st6.toCharArray();
-            for (int i = 0; i < ch2.length; i++) {
-        if (ch2[i] == '2') {
-        st5.append(ch2[i-1]);
-        }
-        else if (ch2[i] == '4') {
-        st5.append(ch2[i-1]).append(ch2[i-1]).append(ch2[i-1]);
-        }
+        for (int i = 0; i < ch2.length; i++) {
+            if (ch2[i] == '2') {
+                st5.append(ch2[i-1]);
+            }
+            else if (ch2[i] == '4') {
+                st5.append(ch2[i-1]).append(ch2[i-1]).append(ch2[i-1]);
+            }
 
-        else {
-        st5.append(ch2[i]);
-        }
+            else {
+                st5.append(ch2[i]);
+            }
 
         }
         System.out.println(st5);
-        }
+    }
 
 }
