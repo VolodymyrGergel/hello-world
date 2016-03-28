@@ -2,10 +2,17 @@
  * Created by Volodymyr.Gergel on 3/2/2016.
  */
 
+/**
+ * This program form massive of 36 or 52 cards, mix them
+ * and add them to hand 1 by 1
+ */
+
+import java.io.*;
+import java.nio.CharBuffer;
 import java.util.*;
 
 public class CardDeck implements CardDeckInterface {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String buffer;
         int numberOfCards = 0;
         int cardsInHand = 0;
@@ -28,33 +35,47 @@ public class CardDeck implements CardDeckInterface {
 
     }
 
-    private static void cardsToHand52() {
+/** 52 cards to hand*/
+
+    private static void cardsToHand52() throws IOException {
         int cardsInHand;
         System.out.println("CARDS IN HAND 52:");
+        Writer writer = new FileWriter("output52.txt");
         for (cardsInHand = 0; cardsInHand < suit.length * rank52.length; cardsInHand++) {
             hand52[cardsInHand] = cardDeck52[cardsInHand];
             System.out.print(hand52[cardsInHand] + "   ");
+
+                writer.write(hand52[cardsInHand] + "   ");
+
             cardDeck52[cardsInHand] = null;
             float a = (cardsInHand + 1) % 13;
             if (a == 0) {
                 System.out.println();
             }
         }
+        writer.close();
     }
 
-    private static void cardsToHand36() {
+
+    /** 36 cards to hand*/
+
+    private static void cardsToHand36() throws IOException {
         int cardsInHand;
         System.out.println("CARDS IN HAND 36:");
+        Writer writer = new FileWriter("output36.txt");
         for (cardsInHand = 0; cardsInHand < suit.length * rank36.length; cardsInHand++) {
             hand36[cardsInHand] = cardDeck36[cardsInHand];
             System.out.print(hand36[cardsInHand] + "   ");
+
+            writer.write(hand36[cardsInHand]  + "   ");
+
             cardDeck36[cardsInHand] = null;
             float a = (cardsInHand + 1) % 9;
             if (a == 0) {
             System.out.println();
             }
         }
-
+        writer.close();
         System.out.println();
     }
 
@@ -131,4 +152,24 @@ public class CardDeck implements CardDeckInterface {
 
     }
 
+    void in36() throws IOException {
+        Reader reader = new FileReader("output36.txt");
+        int i = 0;
+        while(i < hand36.length) {
+            reader.read( CharBuffer.wrap( hand36[i] ) );
+            i++;
+        }
+        reader.close();
+    }
+
+    void in52() throws IOException {
+        Reader reader = new FileReader("output52.txt");
+        int i = 0;
+        while(i < hand52.length) {
+            reader.read( CharBuffer.wrap( hand52[i] ) );
+            i++;
+        }
+        reader.close();
+    }
 }
+

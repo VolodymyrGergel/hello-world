@@ -4,8 +4,6 @@
 
 import java.lang.Math;
 
-import org.junit.*;
-
 import static junit.framework.TestCase.assertEquals;
 
 public class HomeWork1 {
@@ -13,7 +11,7 @@ public class HomeWork1 {
     public static void main(String[] args) throws Exception {
         try {
             int a, b, c, x1, x2;
-            a = 3;
+            a = 0;
             b = 2;
             c = 1;
             double d = getD( a, b, c );
@@ -41,6 +39,7 @@ public class HomeWork1 {
         } else
             System.out.println( "No square root" );
         //int r = 1 / 0;
+        //return x1;
         return x1;
     }
 
